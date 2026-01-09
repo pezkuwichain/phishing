@@ -1,10 +1,10 @@
-// Copyright 2020-2026 @polkadot/phishing authors & contributors
+// Copyright 2020-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import fs from 'node:fs';
 
-// @ts-expect-error @polkadot/dev scripts don't have .d.ts files
-import { mkdirpSync, rimrafSync } from '@polkadot/dev/scripts/util.mjs';
+// @ts-expect-error @pezkuwi/dev scripts don't have .d.ts files
+import { mkdirpSync, rimrafSync } from '@pezkuwi/dev/scripts/util.mjs';
 
 /** @typedef {{ allow: string[]; deny: string[]; denySub: string[] }} AllList */
 

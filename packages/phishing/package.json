@@ -1,29 +1,29 @@
 {
-  "author": "Jaco Greeff <jacogr@gmail.com>",
-  "bugs": "https://github.com/polkadot-js/phishing/issues",
+  "author": "Dijital Kurdistan Tech Inst <info@pezkuwichain.io>",
+  "bugs": "https://github.com/pezkuwichain/phishing/issues",
   "description": "Simple phishing scripts from a central source",
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/polkadot-js/phishing/tree/master/packages/phishing#readme",
+  "homepage": "https://github.com/pezkuwichain/phishing/tree/master/packages/phishing#readme",
   "license": "Apache-2.0",
-  "name": "@polkadot/phishing",
+  "name": "@pezkuwi/phishing",
   "repository": {
     "directory": "packages/phishing",
     "type": "git",
-    "url": "https://github.com/polkadot-js/phishing.git"
+    "url": "https://github.com/pezkuwichain/phishing.git"
   },
   "sideEffects": [
     "./packageDetect.js",
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "0.25.25-38-x",
+  "version": "0.25.25",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/util": "^14.0.1",
-    "@polkadot/util-crypto": "^14.0.1",
-    "@polkadot/x-fetch": "^14.0.1",
+    "@pezkuwi/util": "^14.0.5",
+    "@pezkuwi/util-crypto": "^14.0.5",
+    "@pezkuwi/x-fetch": "^14.0.5",
     "tldts": "^7.0.8",
     "tslib": "^2.8.1"
   },

@@ -1,7 +1,7 @@
-// Copyright 2020-2026 @polkadot/phishing authors & contributors
+// Copyright 2020-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-/// <reference types="@polkadot/dev-test/globals.d.ts" />
+/// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
 import { checkAddress, checkIfDenied } from './index.js';
 

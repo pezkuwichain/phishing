@@ -1,11 +1,11 @@
-// Copyright 2020-2026 @polkadot/phishing authors & contributors
+// Copyright 2020-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-/// <reference types="@polkadot/dev-test/globals.d.ts" />
+/// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
 import fs from 'node:fs';
 
-import { decodeAddress } from '@polkadot/util-crypto';
+import { decodeAddress } from '@pezkuwi/util-crypto';
 
 const addresses = JSON.parse(fs.readFileSync('address.json', 'utf-8')) as Record<string, string[]>;
 const allowed = JSON.parse(fs.readFileSync('known.json', 'utf-8')) as Record<string, string[]>;

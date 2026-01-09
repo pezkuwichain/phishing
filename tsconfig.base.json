@@ -1,9 +1,9 @@
 {
-  "extends": "@polkadot/dev/config/tsconfig.json",
+  "extends": "@pezkuwi/dev/config/tsconfig.json",
   "compilerOptions": {
     "composite": true,
     "paths": {
-      "@polkadot/phishing": ["phishing/src/index.ts"]
+      "@pezkuwi/phishing": ["phishing/src/index.ts"]
     }
   }
  }

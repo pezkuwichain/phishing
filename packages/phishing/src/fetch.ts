@@ -1,9 +1,9 @@
-// Copyright 2020-2026 @polkadot/phishing authors & contributors
+// Copyright 2020-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { fetch } from '@polkadot/x-fetch';
+import { fetch } from '@pezkuwi/x-fetch';
 
-// this is also in @polkadot/apps-config - we may want to expose it
+// this is also in @pezkuwi/apps-config - we may want to expose it
 // inside x-fetch at some point in the future...
 
 // a fetch with a 2s timeout

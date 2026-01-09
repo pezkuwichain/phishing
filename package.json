@@ -1,16 +1,16 @@
 {
-  "author": "Jaco Greeff <jacogr@gmail.com>",
-  "bugs": "https://github.com/polkadot-js/phishing/issues",
+  "author": "Dijital Kurdistan Tech Inst <info@pezkuwichain.io>",
+  "bugs": "https://github.com/pezkuwichain/phishing/issues",
   "engines": {
     "node": ">=18.14"
   },
-  "homepage": "https://github.com/polkadot-js/phishing#readme",
+  "homepage": "https://github.com/pezkuwichain/phishing#readme",
   "license": "Apache-2.0",
   "packageManager": "yarn@4.6.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/polkadot-js/phishing.git"
+    "url": "https://github.com/pezkuwichain/phishing.git"
   },
   "sideEffects": false,
   "type": "module",
@@ -23,25 +23,25 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "polkadot-dev-build-ts",
+    "build": "pezkuwi-dev-build-ts",
     "build:before": "node scripts/sortAll.mjs",
-    "build:release": "polkadot-ci-ghact-build",
+    "build:release": "pezkuwi-ci-ghact-build",
     "build:release:ipfs": "node scripts/ipfsUpload.mjs",
-    "build:rollup": "polkadot-exec-rollup --config",
-    "clean": "polkadot-dev-clean-build",
-    "deno": "yarn polkadot-dev-deno-map && yarn build && deno check --import-map=import_map.json mod.ts",
-    "lint": "polkadot-dev-run-lint",
-    "phishing:addrcheck": "polkadot-dev-run-test --env node addrcheck",
-    "phishing:crosscheck": "polkadot-dev-run-test --env node crosscheck",
-    "postinstall": "polkadot-dev-yarn-only",
-    "test": "polkadot-dev-run-test --env node ^addrcheck ^crosscheck"
+    "build:rollup": "pezkuwi-exec-rollup --config",
+    "clean": "pezkuwi-dev-clean-build",
+    "deno": "yarn pezkuwi-dev-deno-map && yarn build && deno check --import-map=import_map.json mod.ts",
+    "lint": "pezkuwi-dev-run-lint",
+    "phishing:addrcheck": "pezkuwi-dev-run-test --env node addrcheck",
+    "phishing:crosscheck": "pezkuwi-dev-run-test --env node crosscheck",
+    "postinstall": "pezkuwi-dev-yarn-only",
+    "test": "pezkuwi-dev-run-test --env node ^addrcheck ^crosscheck"
   },
   "dependencies": {
     "@pinata/sdk": "^2.1.0",
     "dnslink-cloudflare": "^3.0.0"
   },
   "devDependencies": {
-    "@polkadot/dev": "^0.83.3",
+    "@pezkuwi/dev": "^0.85.2",
     "@types/node": "^22.10.5"
   },
   "resolutions": {

@@ -1,12 +1,12 @@
-// Copyright 2020-2026 @polkadot/phishing authors & contributors
+// Copyright 2020-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { AddressList, HostList } from './types.js';
 
 import { parse } from 'tldts';
 
-import { u8aEq } from '@polkadot/util';
-import { decodeAddress } from '@polkadot/util-crypto';
+import { u8aEq } from '@pezkuwi/util';
+import { decodeAddress } from '@pezkuwi/util-crypto';
 
 import { fetchJson } from './fetch.js';
 
@@ -25,8 +25,8 @@ interface CacheHostList extends Cache<HostList> {
   parts: string[][];
 }
 
-// Equivalent to https://raw.githubusercontent.com/polkadot-js/phishing/master/{address,all}.json
-const PHISHING = 'https://polkadot.js.org/phishing';
+// Equivalent to https://raw.githubusercontent.com/pezkuwichain/phishing/master/{address,all}.json
+const PHISHING = 'https://phishing.pezkuwichain.io';
 const ADDRESS_JSON = `${PHISHING}/address.json`;
 // 45 minutes cache refresh
 const CACHE_TIMEOUT = 45 * 60 * 1000;

@@ -3,7 +3,7 @@ title: Missing site entries
 labels: ['ci']
 ---
 
-cc @polkadot-js/notifications
+cc @pezkuwichain/notifications
 
 Additional entries have been detected in other databases.
 

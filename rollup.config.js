@@ -1,16 +1,16 @@
-// Copyright 2017-2026 @polkadot/phishing authors & contributors
+// Copyright 2017-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { createBundle } from '@polkadot/dev/config/rollup';
+import { createBundle } from '@pezkuwi/dev/config/rollup';
 
 const pkgs = [
-  '@polkadot/phishing'
+  '@pezkuwi/phishing'
 ];
 
 const external = [
   ...pkgs,
-  '@polkadot/util',
-  '@polkadot/util-crypto'
+  '@pezkuwi/util',
+  '@pezkuwi/util-crypto'
 ];
 
 const entries = {};

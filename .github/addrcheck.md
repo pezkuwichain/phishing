@@ -3,7 +3,7 @@ title: Missing address entries
 labels: ['ci']
 ---
 
-cc @polkadot-js/notifications
+cc @pezkuwichain/notifications
 
 Additional entries for addresses have been detected.
 

@@ -396,46 +396,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pinata/sdk@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@pinata/sdk@npm:2.1.0"
-  dependencies:
-    axios: "npm:^0.21.1"
-    form-data: "npm:^2.3.3"
-    is-ipfs: "npm:^0.6.0"
-    path: "npm:^0.12.7"
-  checksum: 10/715a90987defa7056dfde6c698b5ccb2b53fcde53f2469b97ec004e7f0f84ccd0ef2bdb71bf4dbe4d6cca238849b49b0c84832cd164c6a2a6d82732e72d7bd15
-  languageName: node
-  linkType: hard
-
-"@polkadot/dev-test@npm:^0.83.3":
-  version: 0.83.3
-  resolution: "@polkadot/dev-test@npm:0.83.3"
+"@pezkuwi/dev-test@npm:^0.85.1":
+  version: 0.85.1
+  resolution: "@pezkuwi/dev-test@npm:0.85.1"
   dependencies:
     jsdom: "npm:^24.0.0"
     tslib: "npm:^2.7.0"
-  checksum: 10/c03e0c5c5c5d22394c63948b35157b97f8f734a6a8403c89990c55b2657f2b284996aef8613815b2b576b271a126244d7f0a2c9ddece438c5799f273be2e1c69
+  checksum: 10/98253c862a0db3f59b10d761a9eba6ca96cac39f9608674de0ab6d8ee6d76c9a25d92d5ea6c4a003c86d36ab9fcda18e7c10ffd6155256a0e8de25d3a53ab997
   languageName: node
   linkType: hard
 
-"@polkadot/dev-ts@npm:^0.83.3":
-  version: 0.83.3
-  resolution: "@polkadot/dev-ts@npm:0.83.3"
+"@pezkuwi/dev-ts@npm:^0.85.1":
+  version: 0.85.1
+  resolution: "@pezkuwi/dev-ts@npm:0.85.1"
   dependencies:
     json5: "npm:^2.2.3"
     tslib: "npm:^2.7.0"
     typescript: "npm:^5.5.4"
-  checksum: 10/a2ddc4dba934758cc24f02e8acbfa5a5f5295ad874f42c1bea8548a6dfa97c882b127a279001831caedc8d474becb905286847e0f64e8efe7063b6bac4830112
+  checksum: 10/badcf660f6c94ade4f4c56afff4c71f6bcee0790c5c666214a1dedbc686940e8784bd1d29d4a146c3666183212983f5aa0bfa744aa5b59acaedc6487cd88c327
   languageName: node
   linkType: hard
 
-"@polkadot/dev@npm:^0.83.3":
-  version: 0.83.3
-  resolution: "@polkadot/dev@npm:0.83.3"
+"@pezkuwi/dev@npm:^0.85.2":
+  version: 0.85.2
+  resolution: "@pezkuwi/dev@npm:0.85.2"
   dependencies:
     "@eslint/js": "npm:^8.56.0"
-    "@polkadot/dev-test": "npm:^0.83.3"
-    "@polkadot/dev-ts": "npm:^0.83.3"
+    "@pezkuwi/dev-test": "npm:^0.85.1"
+    "@pezkuwi/dev-ts": "npm:^0.85.1"
     "@rollup/plugin-alias": "npm:^5.1.1"
     "@rollup/plugin-commonjs": "npm:^25.0.8"
     "@rollup/plugin-dynamic-import-vars": "npm:^2.1.5"
@@ -477,51 +465,51 @@ __metadata:
     webpack-subresource-integrity: "npm:^5.2.0-rc.1"
     yargs: "npm:^17.7.2"
   bin:
-    polkadot-ci-ghact-build: scripts/polkadot-ci-ghact-build.mjs
-    polkadot-ci-ghact-docs: scripts/polkadot-ci-ghact-docs.mjs
-    polkadot-ci-ghpages-force: scripts/polkadot-ci-ghpages-force.mjs
-    polkadot-dev-build-docs: scripts/polkadot-dev-build-docs.mjs
-    polkadot-dev-build-ts: scripts/polkadot-dev-build-ts.mjs
-    polkadot-dev-circular: scripts/polkadot-dev-circular.mjs
-    polkadot-dev-clean-build: scripts/polkadot-dev-clean-build.mjs
-    polkadot-dev-contrib: scripts/polkadot-dev-contrib.mjs
-    polkadot-dev-copy-dir: scripts/polkadot-dev-copy-dir.mjs
-    polkadot-dev-copy-to: scripts/polkadot-dev-copy-to.mjs
-    polkadot-dev-deno-map: scripts/polkadot-dev-deno-map.mjs
-    polkadot-dev-run-lint: scripts/polkadot-dev-run-lint.mjs
-    polkadot-dev-run-node-ts: scripts/polkadot-dev-run-node-ts.mjs
-    polkadot-dev-run-test: scripts/polkadot-dev-run-test.mjs
-    polkadot-dev-version: scripts/polkadot-dev-version.mjs
-    polkadot-dev-yarn-only: scripts/polkadot-dev-yarn-only.mjs
-    polkadot-exec-eslint: scripts/polkadot-exec-eslint.mjs
-    polkadot-exec-ghpages: scripts/polkadot-exec-ghpages.mjs
-    polkadot-exec-ghrelease: scripts/polkadot-exec-ghrelease.mjs
-    polkadot-exec-node-test: scripts/polkadot-exec-node-test.mjs
-    polkadot-exec-rollup: scripts/polkadot-exec-rollup.mjs
-    polkadot-exec-tsc: scripts/polkadot-exec-tsc.mjs
-    polkadot-exec-webpack: scripts/polkadot-exec-webpack.mjs
-  checksum: 10/f34171f4776f0ade59e750e6c43db56fccc800e5c5c2e7796299e83072534257fa5e7478b8159a4b265e96d36c9fe380d56326c21cdbdf51dda3221c269601be
+    pezkuwi-ci-ghact-build: scripts/pezkuwi-ci-ghact-build.mjs
+    pezkuwi-ci-ghact-docs: scripts/pezkuwi-ci-ghact-docs.mjs
+    pezkuwi-ci-ghpages-force: scripts/pezkuwi-ci-ghpages-force.mjs
+    pezkuwi-dev-build-docs: scripts/pezkuwi-dev-build-docs.mjs
+    pezkuwi-dev-build-ts: scripts/pezkuwi-dev-build-ts.mjs
+    pezkuwi-dev-circular: scripts/pezkuwi-dev-circular.mjs
+    pezkuwi-dev-clean-build: scripts/pezkuwi-dev-clean-build.mjs
+    pezkuwi-dev-contrib: scripts/pezkuwi-dev-contrib.mjs
+    pezkuwi-dev-copy-dir: scripts/pezkuwi-dev-copy-dir.mjs
+    pezkuwi-dev-copy-to: scripts/pezkuwi-dev-copy-to.mjs
+    pezkuwi-dev-deno-map: scripts/pezkuwi-dev-deno-map.mjs
+    pezkuwi-dev-run-lint: scripts/pezkuwi-dev-run-lint.mjs
+    pezkuwi-dev-run-node-ts: scripts/pezkuwi-dev-run-node-ts.mjs
+    pezkuwi-dev-run-test: scripts/pezkuwi-dev-run-test.mjs
+    pezkuwi-dev-version: scripts/pezkuwi-dev-version.mjs
+    pezkuwi-dev-yarn-only: scripts/pezkuwi-dev-yarn-only.mjs
+    pezkuwi-exec-eslint: scripts/pezkuwi-exec-eslint.mjs
+    pezkuwi-exec-ghpages: scripts/pezkuwi-exec-ghpages.mjs
+    pezkuwi-exec-ghrelease: scripts/pezkuwi-exec-ghrelease.mjs
+    pezkuwi-exec-node-test: scripts/pezkuwi-exec-node-test.mjs
+    pezkuwi-exec-rollup: scripts/pezkuwi-exec-rollup.mjs
+    pezkuwi-exec-tsc: scripts/pezkuwi-exec-tsc.mjs
+    pezkuwi-exec-webpack: scripts/pezkuwi-exec-webpack.mjs
+  checksum: 10/bfd248ad2ba8db15d6005652c3d4f4ca0ba8fe675be860ec1cfbbf8124dea5fa3c67b397ac0b30ba6d47d802b6b2743bf3ac898f683341ef34c00dafef18a55b
   languageName: node
   linkType: hard
 
-"@polkadot/networks@npm:14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/networks@npm:14.0.1"
+"@pezkuwi/networks@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/networks@npm:14.0.5"
   dependencies:
-    "@polkadot/util": "npm:14.0.1"
+    "@pezkuwi/util": "npm:14.0.5"
     "@substrate/ss58-registry": "npm:^1.51.0"
     tslib: "npm:^2.8.0"
-  checksum: 10/ccb4e24ac5d7bc1af49b875bc4cd39b135e86e6518f8345ac5b8d3acea576380de73d4175c19e6f58a2f3f173779e6c71a75b6c1d77a95241cdc5e776849432b
+  checksum: 10/2d11606e87ee30e4cf58984d372e1c6f56ed01757fe5a4f23f2d346cdbf5c551cc845315a8bdaf8046222cdf739d5129cfffe7e293c685baffbf02a1075eefd0
   languageName: node
   linkType: hard
 
-"@polkadot/phishing@workspace:packages/phishing":
+"@pezkuwi/phishing@workspace:packages/phishing":
   version: 0.0.0-use.local
-  resolution: "@polkadot/phishing@workspace:packages/phishing"
+  resolution: "@pezkuwi/phishing@workspace:packages/phishing"
   dependencies:
-    "@polkadot/util": "npm:^14.0.1"
-    "@polkadot/util-crypto": "npm:^14.0.1"
-    "@polkadot/x-fetch": "npm:^14.0.1"
+    "@pezkuwi/util": "npm:^14.0.5"
+    "@pezkuwi/util-crypto": "npm:^14.0.5"
+    "@pezkuwi/x-fetch": "npm:^14.0.5"
     "@types/js-yaml": "npm:^4.0.9"
     js-yaml: "npm:^4.1.0"
     tldts: "npm:^7.0.8"
@@ -529,182 +517,205 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/util-crypto@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/util-crypto@npm:14.0.1"
+"@pezkuwi/util-crypto@npm:^14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/util-crypto@npm:14.0.5"
   dependencies:
     "@noble/curves": "npm:^1.3.0"
     "@noble/hashes": "npm:^1.3.3"
-    "@polkadot/networks": "npm:14.0.1"
-    "@polkadot/util": "npm:14.0.1"
-    "@polkadot/wasm-crypto": "npm:^7.5.3"
-    "@polkadot/wasm-util": "npm:^7.5.3"
-    "@polkadot/x-bigint": "npm:14.0.1"
-    "@polkadot/x-randomvalues": "npm:14.0.1"
+    "@pezkuwi/networks": "npm:14.0.5"
+    "@pezkuwi/util": "npm:14.0.5"
+    "@pezkuwi/wasm-crypto": "npm:^7.5.3"
+    "@pezkuwi/wasm-util": "npm:^7.5.3"
+    "@pezkuwi/x-bigint": "npm:14.0.5"
+    "@pezkuwi/x-randomvalues": "npm:14.0.5"
     "@scure/base": "npm:^1.1.7"
     "@scure/sr25519": "npm:^0.2.0"
     tslib: "npm:^2.8.0"
   peerDependencies:
-    "@polkadot/util": 14.0.1
-  checksum: 10/132a89d4e80ba0076213ca03991e6195ad8abb3b469b4fdca1826187c4bc879f0310c9c99a73b8a2e5ca2af427c6715af7e43c99c3c9199090091ab354281d95
+    "@pezkuwi/util": 14.0.5
+  checksum: 10/f86b117544798cd0fa6f5e14bd1d76b0fbc19390717cddd52b9bd3b590d819dd26ab04d469ad5af5ab697201cdd83122669ed2e536757b9091848b0dd8d2a45b
   languageName: node
   linkType: hard
 
-"@polkadot/util@npm:14.0.1, @polkadot/util@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/util@npm:14.0.1"
+"@pezkuwi/util@npm:14.0.5, @pezkuwi/util@npm:^14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/util@npm:14.0.5"
   dependencies:
-    "@polkadot/x-bigint": "npm:14.0.1"
-    "@polkadot/x-global": "npm:14.0.1"
-    "@polkadot/x-textdecoder": "npm:14.0.1"
-    "@polkadot/x-textencoder": "npm:14.0.1"
+    "@pezkuwi/x-bigint": "npm:14.0.5"
+    "@pezkuwi/x-global": "npm:14.0.5"
+    "@pezkuwi/x-textdecoder": "npm:14.0.5"
+    "@pezkuwi/x-textencoder": "npm:14.0.5"
     "@types/bn.js": "npm:^5.1.6"
     bn.js: "npm:^5.2.1"
     tslib: "npm:^2.8.0"
-  checksum: 10/c6f8f3d2fa1a68f1af0396090fce191eab58a4256c201d60231b697051c0db34e4a7bcbcd2cf833796d839762366f0d7553e8613ccadeb03c422c3d159563aea
+  checksum: 10/13a091b45928456f59484de923679a86b4088369366943145ad8b7f2272af128a419e40b1d9d7a03b2a5fbb30969919d6dc16c991feb120fd77a654a38a63ded
   languageName: node
   linkType: hard
 
-"@polkadot/wasm-bridge@npm:7.5.3":
-  version: 7.5.3
-  resolution: "@polkadot/wasm-bridge@npm:7.5.3"
+"@pezkuwi/wasm-bridge@npm:7.5.4":
+  version: 7.5.4
+  resolution: "@pezkuwi/wasm-bridge@npm:7.5.4"
   dependencies:
-    "@polkadot/wasm-util": "npm:7.5.3"
+    "@pezkuwi/wasm-util": "npm:7.5.3"
     tslib: "npm:^2.7.0"
   peerDependencies:
-    "@polkadot/util": "*"
-    "@polkadot/x-randomvalues": "*"
-  checksum: 10/b2274de457978c961f40be54d243056608d82035762e1bbbfbfa09f51191b7fbb35d34f25854f8251aa5d451faa0547061578c906922c8d3f7964075f1993955
+    "@pezkuwi/util": "*"
+    "@pezkuwi/x-randomvalues": "*"
+  checksum: 10/04ee72d6306175ac7d3612d06af1cbdbe3c6c504dd95deee05f46b3de818125420b62e047aeb62165a5783d2e43b50a11843e5ac58eeffad32bee539fd38d068
   languageName: node
   linkType: hard
 
-"@polkadot/wasm-crypto-asmjs@npm:7.5.3":
-  version: 7.5.3
-  resolution: "@polkadot/wasm-crypto-asmjs@npm:7.5.3"
-  dependencies:
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    "@polkadot/util": "*"
-  checksum: 10/407bfd079dc81e310966c855f9abb759ce6199e0380b4054d084f248915bd8259b8b9c1ca6d380d5628af3356fd70809ac67df8a847408eddb044a3944972ef6
-  languageName: node
-  linkType: hard
-
-"@polkadot/wasm-crypto-init@npm:7.5.3":
-  version: 7.5.3
-  resolution: "@polkadot/wasm-crypto-init@npm:7.5.3"
-  dependencies:
-    "@polkadot/wasm-bridge": "npm:7.5.3"
-    "@polkadot/wasm-crypto-asmjs": "npm:7.5.3"
-    "@polkadot/wasm-crypto-wasm": "npm:7.5.3"
-    "@polkadot/wasm-util": "npm:7.5.3"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    "@polkadot/util": "*"
-    "@polkadot/x-randomvalues": "*"
-  checksum: 10/3e2e78252856d6be25df12eb7dcd1f2985f95c86178ec95698cdc1a6b5fe7a90e5950767c98dac9daa91c50eb667bcf06a2a2d6a8011cf3357287fdfab07687d
-  languageName: node
-  linkType: hard
-
-"@polkadot/wasm-crypto-wasm@npm:7.5.3":
-  version: 7.5.3
-  resolution: "@polkadot/wasm-crypto-wasm@npm:7.5.3"
-  dependencies:
-    "@polkadot/wasm-util": "npm:7.5.3"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    "@polkadot/util": "*"
-  checksum: 10/b5d0ca87c750d246fe49d170c3738764d649d9a1869eb0c275b5c3024d6a9c44ab5d581d2f81f6b2d4d29e44856397f7102fc94c8adead12729b7d493174d2bd
-  languageName: node
-  linkType: hard
-
-"@polkadot/wasm-crypto@npm:^7.5.3":
-  version: 7.5.3
-  resolution: "@polkadot/wasm-crypto@npm:7.5.3"
-  dependencies:
-    "@polkadot/wasm-bridge": "npm:7.5.3"
-    "@polkadot/wasm-crypto-asmjs": "npm:7.5.3"
-    "@polkadot/wasm-crypto-init": "npm:7.5.3"
-    "@polkadot/wasm-crypto-wasm": "npm:7.5.3"
-    "@polkadot/wasm-util": "npm:7.5.3"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    "@polkadot/util": "*"
-    "@polkadot/x-randomvalues": "*"
-  checksum: 10/a695a6bc3402ee7c79e90b546114fc504f80d0247fb445810fcb1b8ab62351b3d9f0c50a6ca47ebda0bec145534275ab9092bb926fd69443cbc7be7b9bb50bc0
-  languageName: node
-  linkType: hard
-
-"@polkadot/wasm-util@npm:7.5.3, @polkadot/wasm-util@npm:^7.5.3":
-  version: 7.5.3
-  resolution: "@polkadot/wasm-util@npm:7.5.3"
+"@pezkuwi/wasm-crypto-asmjs@npm:7.5.4":
+  version: 7.5.4
+  resolution: "@pezkuwi/wasm-crypto-asmjs@npm:7.5.4"
   dependencies:
     tslib: "npm:^2.7.0"
   peerDependencies:
-    "@polkadot/util": "*"
-  checksum: 10/82c2149c7db0c9cc566aea6caad51e6048d1ee6b9bb7ac06f59c3c28bb94f0d0678f6ee4e51becd241105ba37a6d9e30653f74d630d1bc685ceb18b601f9acda
+    "@pezkuwi/util": "*"
+  checksum: 10/e6b7bf038f6dd87b26ee1e2dbe9545128c7ddc7473cddf64f836ab6d7f91b2974c9b8c6b26abb373f5bec7960f0686cda101d52c81ea1ffc19f17af00688e5fa
   languageName: node
   linkType: hard
 
-"@polkadot/x-bigint@npm:14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/x-bigint@npm:14.0.1"
+"@pezkuwi/wasm-crypto-init@npm:7.5.4":
+  version: 7.5.4
+  resolution: "@pezkuwi/wasm-crypto-init@npm:7.5.4"
   dependencies:
-    "@polkadot/x-global": "npm:14.0.1"
+    "@pezkuwi/wasm-bridge": "npm:7.5.4"
+    "@pezkuwi/wasm-crypto-asmjs": "npm:7.5.4"
+    "@pezkuwi/wasm-crypto-wasm": "npm:7.5.4"
+    "@pezkuwi/wasm-util": "npm:7.5.4"
+    tslib: "npm:^2.7.0"
+  peerDependencies:
+    "@pezkuwi/util": "*"
+    "@pezkuwi/x-randomvalues": "*"
+  checksum: 10/6a3c8526f8d1272c4c9ff5b6d38016bdeac0146885d0521955cbd92d5b82896f9084dd15680c679dea7fd9926c01f4f1489ef62f0723a3e3393d90a728a7dcfb
+  languageName: node
+  linkType: hard
+
+"@pezkuwi/wasm-crypto-wasm@npm:7.5.4":
+  version: 7.5.4
+  resolution: "@pezkuwi/wasm-crypto-wasm@npm:7.5.4"
+  dependencies:
+    "@pezkuwi/wasm-util": "npm:7.5.4"
+    tslib: "npm:^2.7.0"
+  peerDependencies:
+    "@pezkuwi/util": "*"
+  checksum: 10/682967e4eea14c1ce895ae49a6de28e5719b19801db744bfadcb05964ce849169e41fa2c779d0c1b0fb7c41fed463bd7030904af2a6f91c5d4815dacb44bf217
+  languageName: node
+  linkType: hard
+
+"@pezkuwi/wasm-crypto@npm:^7.5.3":
+  version: 7.5.4
+  resolution: "@pezkuwi/wasm-crypto@npm:7.5.4"
+  dependencies:
+    "@pezkuwi/wasm-bridge": "npm:7.5.4"
+    "@pezkuwi/wasm-crypto-asmjs": "npm:7.5.4"
+    "@pezkuwi/wasm-crypto-init": "npm:7.5.4"
+    "@pezkuwi/wasm-crypto-wasm": "npm:7.5.4"
+    "@pezkuwi/wasm-util": "npm:7.5.4"
+    tslib: "npm:^2.7.0"
+  peerDependencies:
+    "@pezkuwi/util": "*"
+    "@pezkuwi/x-randomvalues": "*"
+  checksum: 10/56033fd9dbba804425378fd564079d81a13d03593bb0a74a3b814fd5ee6fccaffdcc3a44d278bbd34eb29c75b74c5c5ef8d787b0647d0a9240bac6e7dd19250c
+  languageName: node
+  linkType: hard
+
+"@pezkuwi/wasm-util@npm:7.5.3":
+  version: 7.5.3
+  resolution: "@pezkuwi/wasm-util@npm:7.5.3"
+  dependencies:
+    tslib: "npm:^2.7.0"
+  peerDependencies:
+    "@pezkuwi/util": "*"
+  checksum: 10/61e195ee2350837133565a82d20bea2924a9830b48f241c1bbbd367eedf86a123e358724a31da54db778f9ca0803642166dfeb01d6bbe61691c02a082c1c302e
+  languageName: node
+  linkType: hard
+
+"@pezkuwi/wasm-util@npm:7.5.4, @pezkuwi/wasm-util@npm:^7.5.3":
+  version: 7.5.4
+  resolution: "@pezkuwi/wasm-util@npm:7.5.4"
+  dependencies:
+    tslib: "npm:^2.7.0"
+  peerDependencies:
+    "@pezkuwi/util": "*"
+  checksum: 10/fb4cdfafdf27cf6be95247fe58bd2fb22108e554ee1231ad6e202824ff0e8fb2fe80764679e6bb8f9f0a768feb163c6bd3339a20be26b6d0baae1bad5eef2ac5
+  languageName: node
+  linkType: hard
+
+"@pezkuwi/x-bigint@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/x-bigint@npm:14.0.5"
+  dependencies:
+    "@pezkuwi/x-global": "npm:14.0.5"
     tslib: "npm:^2.8.0"
-  checksum: 10/e56c4086c19ecf93b18d6613ae1c03c28755899f7baf817ed870ade4c39be610e5cf5d098944845943a3d713f2c0aabe80b4762d7a7f89df87891ba83625c322
+  checksum: 10/d96f085883b12dc1596722ff85a4c9975f93fbf67c394592b779e7a8d3df32768f9d384159b247f06e3584db028b9affef0ff53d7084e3371540901efaa18c06
   languageName: node
   linkType: hard
 
-"@polkadot/x-fetch@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/x-fetch@npm:14.0.1"
+"@pezkuwi/x-fetch@npm:^14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/x-fetch@npm:14.0.5"
   dependencies:
-    "@polkadot/x-global": "npm:14.0.1"
+    "@pezkuwi/x-global": "npm:14.0.5"
     node-fetch: "npm:^3.3.2"
     tslib: "npm:^2.8.0"
-  checksum: 10/a358687605e3c622d36ebfd94607ceb74b5430a247f83bb675b085d8baaca740f004bb4f23626f0119219d8971bb415e7dfc13c78f1f6711a6d4b5f082eb1130
+  checksum: 10/8c532cc9183018a76b98fee5b0c2e346fe0ffdac2d3c5213b10fccfb3adbd2a2cd59b628fb1d9112fad2d05ec9c81b1fae71b72cb4a648292ba9c1df3531834f
   languageName: node
   linkType: hard
 
-"@polkadot/x-global@npm:14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/x-global@npm:14.0.1"
+"@pezkuwi/x-global@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/x-global@npm:14.0.5"
   dependencies:
     tslib: "npm:^2.8.0"
-  checksum: 10/f5486c836b4cf95e1a84921961ba7c2fb4426b4f28af3a9e33fb78f7ae846dbe6d39bd2d9916e6eb7e0aed3e7e743c5b432a9437ecff944ed96db1640f25e288
+  checksum: 10/26900fd74047648ab40ca08de3f1534f31fe1e59f67675836b1b94a785f95adb99ee3fe5717a4eab9e43d229717154b507748d1209663d04cd878915c7f53182
   languageName: node
   linkType: hard
 
-"@polkadot/x-randomvalues@npm:14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/x-randomvalues@npm:14.0.1"
+"@pezkuwi/x-randomvalues@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/x-randomvalues@npm:14.0.5"
   dependencies:
-    "@polkadot/x-global": "npm:14.0.1"
+    "@pezkuwi/x-global": "npm:14.0.5"
     tslib: "npm:^2.8.0"
   peerDependencies:
-    "@polkadot/util": 14.0.1
-    "@polkadot/wasm-util": "*"
-  checksum: 10/0c382109938786cfe159920de28d53bfe949e54fb60e15a45ce97a3a311c0b62b37051f978aaff1d342a92a8d0684d9065eac6d46138b769dca69fbf61c57fa7
+    "@pezkuwi/util": 14.0.5
+    "@pezkuwi/wasm-util": "*"
+  checksum: 10/9a811806153374d7b8a5d4bf3e6a766ad4de08d9d8d7f944698e6f75ee9eb3a64f851c4d67b574a2ae41025d22181af4a869fb864564d52c63e83f966684c1d2
   languageName: node
   linkType: hard
 
-"@polkadot/x-textdecoder@npm:14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/x-textdecoder@npm:14.0.1"
+"@pezkuwi/x-textdecoder@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/x-textdecoder@npm:14.0.5"
   dependencies:
-    "@polkadot/x-global": "npm:14.0.1"
+    "@pezkuwi/x-global": "npm:14.0.5"
     tslib: "npm:^2.8.0"
-  checksum: 10/b33f51f93046fdab0c20b6cc764f52051a06403467fbe8c8742bca5e89ed492ecbb69e4f90a1f8090c330c3ccdcd63311cc695b8f7401212e9085c3804724970
+  checksum: 10/48e74787f6cf2e232014b0cd005c865958333af88273766887dd71a072deb6216c4c2d771c2515bfc7bcb3a6eb98ef947f0c289047bdea53f660cbef0fad1579
   languageName: node
   linkType: hard
 
-"@polkadot/x-textencoder@npm:14.0.1":
-  version: 14.0.1
-  resolution: "@polkadot/x-textencoder@npm:14.0.1"
+"@pezkuwi/x-textencoder@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@pezkuwi/x-textencoder@npm:14.0.5"
   dependencies:
-    "@polkadot/x-global": "npm:14.0.1"
+    "@pezkuwi/x-global": "npm:14.0.5"
     tslib: "npm:^2.8.0"
-  checksum: 10/9627aed6c660c04ee7c633fbe99c68fb172c35ce5e9bdb9afa3ef4d245f8f99ff5da552d6088b25343238d243adedaab7cbd54b7fba5121fe5e3c612337ef404
+  checksum: 10/59687b490072b6921830c52dcf2586cfc53d5ca61f470dfaacba0c4a543c14c4bc7075ca9bf9254c9b85bf12efd2d37f44e21ae2335c78a821e78590a29b1c47
+  languageName: node
+  linkType: hard
+
+"@pinata/sdk@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@pinata/sdk@npm:2.1.0"
+  dependencies:
+    axios: "npm:^0.21.1"
+    form-data: "npm:^2.3.3"
+    is-ipfs: "npm:^0.6.0"
+    path: "npm:^0.12.7"
+  checksum: 10/715a90987defa7056dfde6c698b5ccb2b53fcde53f2469b97ec004e7f0f84ccd0ef2bdb71bf4dbe4d6cca238849b49b0c84832cd164c6a2a6d82732e72d7bd15
   languageName: node
   linkType: hard
 
@@ -8130,8 +8141,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@pezkuwi/dev": "npm:^0.85.2"
     "@pinata/sdk": "npm:^2.1.0"
-    "@polkadot/dev": "npm:^0.83.3"
     "@types/node": "npm:^22.10.5"
     dnslink-cloudflare: "npm:^3.0.0"
   languageName: unknown
