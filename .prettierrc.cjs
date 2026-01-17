@@ -1,4 +1,4 @@
-// Copyright 2020-2026 @polkadot/phishing authors & contributors
+// Copyright 2017-2026 @pezkuwi/phishing authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-module.exports = require('@polkadot/dev/config/prettier.cjs');
+module.exports = require('@pezkuwi/dev/config/prettier.cjs');
