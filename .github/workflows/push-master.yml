@@ -7,16 +7,10 @@ on:
 jobs:
   master:
     if: "! startsWith(github.event.head_commit.message, '[CI Skip]')"
-    strategy:
-      matrix:
-        step: ['build:release']
     runs-on: ubuntu-latest
     env:
       CI_LOG: 123
       YARN_ENABLE_SCRIPTS: false
-      GH_PAT: ${{ secrets.GH_PAT_BOT }}
-      GH_RELEASE_GITHUB_API_TOKEN: ${{ secrets.GH_PAT_BOT }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
     - uses: actions/checkout@v4
       with:
@@ -24,10 +18,10 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 'lts/*'
-    - name: ${{ matrix.step }}
+    - name: Install and Build
       run: |
         yarn install --immutable
-        yarn ${{ matrix.step }}
+        yarn build
 
   # publish to ipfs when a release is detected
   ipfs:
