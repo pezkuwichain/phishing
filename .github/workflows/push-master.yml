@@ -21,7 +21,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ secrets.GH_PAT_BOT }}
     - uses: actions/setup-node@v4
       with:
         node-version: 'lts/*'

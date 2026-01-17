@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: dessant/lock-threads@c1b35aecc5cdb1a34539d14196df55838bb2f836
         with:
-          github-token: ${{ secrets.GH_PAT_BOT }}
+          github-token: ${{ github.token }}
           issue-inactive-days: '7'
           issue-comment: >
             This thread has been automatically locked since there has not been
