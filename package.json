@@ -1,16 +1,16 @@
 {
   "author": "Dijital Kurdistan Tech Inst <info@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/phishing/issues",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/phishing/issues",
   "engines": {
     "node": ">=18.14"
   },
-  "homepage": "https://github.com/pezkuwichain/phishing#readme",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/phishing#readme",
   "license": "Apache-2.0",
   "packageManager": "yarn@4.6.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/pezkuwichain/phishing.git"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/phishing.git"
   },
   "sideEffects": false,
   "type": "module",
