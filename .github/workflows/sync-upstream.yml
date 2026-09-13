@@ -73,20 +73,23 @@ jobs:
           umask 077
           printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/sync_deploy
           # GitHub's own host keys, committed in pezkuwi/github_host_keys: nothing learned at run time.
-          sed 's|^|github.com |' pezkuwi/github_host_keys > ~/.ssh/known_hosts
+          # The file already names the host on each line; adding it again made ssh reject every key.
+          cp pezkuwi/github_host_keys ~/.ssh/known_hosts
           GIT_SSH_COMMAND="ssh -i $HOME/.ssh/sync_deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             git push git@github.com:pezkuwichain/phishing.git HEAD:master
           rm -f ~/.ssh/sync_deploy
 
+      # Also when a later step failed, a refused push included: a sync that stops silently is how
+      # these lists went eight months stale.
       - name: Ask a person
-        if: steps.sync.outputs.rc != '0'
+        if: failure() || steps.sync.outputs.rc != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           title="Upstream list sync stopped and needs a person"
-          body="$(printf 'The daily sync refused to write the lists.\n\n```\n%s\n```\n\nRun: %s/%s/actions/runs/%s\n' \
-            "$(tail -n 40 sync.out)" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID")"
+          body="$(printf 'The daily sync did not bring the lists up to date: it refused them, or a later step (the checks, the commit, the push) failed.\n\n```\n%s\n```\n\nRun: %s/%s/actions/runs/%s\n' \
+            "$(tail -n 40 sync.out 2>/dev/null || echo 'no sync output')" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID")"
           open="$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number // empty')"
           if [ -n "$open" ]; then gh issue comment "$open" --body "$body"; else gh issue create --title "$title" --body "$body"; fi
           exit 1
