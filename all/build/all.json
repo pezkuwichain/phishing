@@ -1,0 +1,10 @@
+[
+	"airdrop-pretzel.build",
+	"airdrop-union.build",
+	"exodus.build",
+	"iaunchpad-ally.build",
+	"join-linea.build",
+	"register-enso.build",
+	"registry-linea.build",
+	"shellprotocol.build"
+]

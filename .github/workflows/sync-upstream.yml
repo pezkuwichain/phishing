@@ -1,0 +1,82 @@
+name: Sync upstream lists
+
+# Once a day, bring polkadot-js/phishing's lists here with our own entries laid over them
+# (pezkuwi/overlay.json). scripts/syncUpstream.mjs writes nothing when the day is out of bounds:
+# too many sites unblocked or added, one of our domains blocked, one of our entries lost. Then
+# this job opens an issue instead, and a person decides. A day within bounds is committed to
+# master directly (decision of 2026-09-13); phishing.pezkuwichain.io picks master up on its own
+# (pezkuwi/host/).
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      # No credentials in the checkout: the sync and the checks process upstream's data, and only
+      # the commit step, below, is handed the token it pushes with.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Fetch upstream
+        run: git fetch --no-tags --depth=1 https://github.com/polkadot-js/phishing.git master
+
+      - name: Sync
+        id: sync
+        run: |
+          set -uo pipefail
+          node scripts/syncUpstream.mjs FETCH_HEAD 2>&1 | tee sync.out
+          echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Check
+        if: steps.sync.outputs.rc == '0'
+        run: |
+          node --test scripts/lists.test.mjs
+          node scripts/checkLists.mjs
+
+      - name: Commit to master
+        if: steps.sync.outputs.rc == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- all.json address.json known.json all meta pezkuwi/upstream.json)" ]; then
+            echo "upstream lists have not moved"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- all.json address.json known.json all meta pezkuwi/upstream.json
+          git commit -q -m "chore(lists): sync with polkadot-js/phishing" -m "$(grep -E '^(SYNC |unblocked: )' sync.out)"
+          gh auth setup-git
+          git push origin HEAD:master
+
+      - name: Ask a person
+        if: steps.sync.outputs.rc != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="Upstream list sync stopped and needs a person"
+          body="$(printf 'The daily sync refused to write the lists.\n\n```\n%s\n```\n\nRun: %s/%s/actions/runs/%s\n' \
+            "$(tail -n 40 sync.out)" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID")"
+          open="$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number // empty')"
+          if [ -n "$open" ]; then gh issue comment "$open" --body "$body"; else gh issue create --title "$title" --body "$body"; fi
+          exit 1

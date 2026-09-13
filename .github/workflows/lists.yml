@@ -1,0 +1,34 @@
+name: Lists
+
+# The rules every change to the lists must pass: scripts/lists.test.mjs for the rules and the
+# sync, scripts/checkLists.mjs for the committed files. Nothing to install, so this check stands
+# on its own when the build toolchain does not.
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions: {}
+
+jobs:
+  lists:
+    name: lists
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+      - name: Rules for the lists and the sync
+        run: node --test scripts/lists.test.mjs
+      - name: The committed lists
+        run: node scripts/checkLists.mjs
+      # What phishing.pezkuwichain.io runs before it serves a new master: against a scratch
+      # repository and web root, with these lists.
+      - name: The host's publish checks
+        run: bash pezkuwi/host/test-publish.sh
