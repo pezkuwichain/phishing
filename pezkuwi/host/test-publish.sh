@@ -75,6 +75,9 @@ check "all.json is master's" "$(sha256sum <"$LISTS/all.json")" "$(sha256sum <"$S
 check "a shard is master's" "$(sha256sum <"$LISTS/all/com/all.json")" "$(sha256sum <"$SB/www/all/com/all.json")"
 check "the stray all/all.json is gone" no "$([ -e "$SB/www/all/all.json" ] && echo yes || echo no)"
 check "index.html untouched" "$INDEX" "$(sha256sum "$SB/www/index.html")"
+# nginx reads as another user: a web root or list it cannot read answers 403.
+check "the web root and its directories are 755" 0 "$(find "$SB/www" -type d ! -perm 755 | wc -l)"
+check "the lists are 644" 0 "$(find "$SB/www" -type f ! -name index.html ! -perm 644 | wc -l)"
 check "the published commit is recorded" "$(git -C "$SB/work" rev-parse HEAD)" "$(cat "$SB/state/published")"
 check "nothing new: exit" 0 "$(publish)"
 check "nothing new: silent" "" "$(cat "$SB/out")"

@@ -136,7 +136,9 @@ for domain in protected:
 print(f"checked: {len(deny)} blocked sites, {sum(len(v) for v in address.values())} scam addresses")
 PY
 
-rsync -a --checksum --delete --delay-updates --chown=root:root --exclude index.html "$stage/" "$WEB_ROOT/"
+# Modes are set, not copied: the stage is a mktemp directory, 0700, and copying its mode made the
+# web root unreadable to nginx. Every list answered 403 until it was put back (2026-09-13).
+rsync -a --checksum --delete --delay-updates --chown=root:root --chmod=D755,F644 --exclude index.html "$stage/" "$WEB_ROOT/"
 printf '%s\n' "$new" >"$STATE_DIR/published.new"
 mv -f "$STATE_DIR/published.new" "$STATE_DIR/published"
 echo "published ${new:0:12}"
