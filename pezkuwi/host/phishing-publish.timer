@@ -1,0 +1,10 @@
+[Unit]
+Description=Publish the phishing lists every hour
+
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

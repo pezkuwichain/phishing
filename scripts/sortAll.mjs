@@ -3,8 +3,18 @@
 
 import fs from 'node:fs';
 
-// @ts-expect-error @pezkuwi/dev scripts don't have .d.ts files
-import { mkdirpSync, rimrafSync } from '@pezkuwi/dev/scripts/util.mjs';
+// Node's own file system only: the daily upstream sync and the lists check run this without
+// installing the build toolchain.
+
+/** @param {string} dir */
+function mkdirpSync (dir) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+/** @param {string} dir */
+function rimrafSync (dir) {
+  fs.rmSync(dir, { force: true, recursive: true });
+}
 
 /** @typedef {{ allow: string[]; deny: string[]; denySub: string[] }} AllList */
 
@@ -16,9 +26,15 @@ const KNOWN_URLS = ['telegra.ph', 'twitter.com', 'youtube.com', 'x.com'];
  * @returns {string}
  */
 function sanitizeUrl (url, allowSub) {
-  const naked = url.includes('://')
+  const naked = (url.includes('://')
     ? url.split('://')[1]
-    : url;
+    : url
+  // A fully qualified name ends in a dot ("scam.xyz."). Kept, it sorts the entry into all/all.json
+  // under an empty top-level domain, where checkIfDenied, which reads all/xyz/all.json, never
+  // looks. Upstream held 817 such entries in September 2026: 816 repeated a name already listed
+  // without the dot, and one (prenads.xyz.) was blocked nowhere else. The package strips the dot
+  // from the host it checks, so the entry means the same without it.
+  ).replace(/\.(?=\/|$)/, '');
 
   return allowSub
     // return without trailing /

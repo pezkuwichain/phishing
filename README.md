@@ -3,18 +3,24 @@
 A curated list of potentially less-than-honest sites inclusive of a simple JS utility function to check any host against this list.
 
 
+## How the lists are kept
+
+These lists are Pezkuwi's copy of [polkadot-js/phishing](https://github.com/polkadot-js/phishing): they follow upstream, with a few entries of our own.
+
+- **Daily sync.** [`sync-upstream.yml`](.github/workflows/sync-upstream.yml) takes upstream's lists every day, lays [`pezkuwi/overlay.json`](pezkuwi/overlay.json) over them, and commits the result to `master`. On a day out of bounds it writes nothing and opens an issue instead: more than 25 sites unblocked or 5000 added, more than 10 scam addresses dropped, one of our own domains blocked, or one of our entries lost ([`scripts/lists.mjs`](scripts/lists.mjs)).
+- **Our entries.** `overlay.json` holds the sites we block that upstream does not (`deny`), upstream entries we deliberately do not block (`undeny`), and our own domains, which no entry may ever block (`protect`). Each entry records why and since when. Change our entries there, not in `all.json`, which every sync rewrites from upstream.
+- **Publishing.** phishing.pezkuwichain.io pulls `master` every hour and checks the lists again before it serves them ([`pezkuwi/host/`](pezkuwi/host/)).
+- **Checks.** [`lists.yml`](.github/workflows/lists.yml) runs the rules' tests and [`scripts/checkLists.mjs`](scripts/checkLists.mjs) on every change. Neither needs the build toolchain.
+
+
 ### Additions
 
-To add a new site, edit [all.json](https://github.com/pezkuwichain/phishing/edit/master/all.json) and add any new entries, single or multiple is allowed per edit.
-
-To add a new scam address (typically per site), edit [address.json](https://github.com/pezkuwichain/phishing/edit/master/address.json) and add it in the correct section (which is keyed by the site providing them).
+Report a new site or scam address to [polkadot-js/phishing](https://github.com/polkadot-js/phishing), and the daily sync brings it here. A site that targets Pezkuwi specifically, and that upstream would not list, goes in the `deny` section of [`pezkuwi/overlay.json`](pezkuwi/overlay.json), with its reason and date.
 
 
 ### Availability
 
-Making additions to the list will be reflected on merge at [phishing.pezkuwichain.io/all.json](https://phishing.pezkuwichain.io/all.json) &  [phishing.pezkuwichain.io/address.json](https://phishing.pezkuwichain.io/address.json). These can be consumed via [@pezkuwi/phishing](https://github.com/pezkuwichain/phishing/tree/master/packages/phishing) and other tools capable of parsing JSON.
-
-The `{address, all}.json` files are also published to IPFS, via [ipns/phishing.pezkuwichain.io](https://ipfs.io/ipns/phishing.pezkuwichain.io/). Libraries can also consume from here for a decentralized approach.
+Changes reach [phishing.pezkuwichain.io/all.json](https://phishing.pezkuwichain.io/all.json) and [phishing.pezkuwichain.io/address.json](https://phishing.pezkuwichain.io/address.json) within the hour after they land on `master`. These can be consumed via [@pezkuwi/phishing](https://github.com/pezkuwichain/phishing/tree/master/packages/phishing) and other tools capable of parsing JSON.
 
 
 ## Notable users

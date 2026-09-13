@@ -1,0 +1,14 @@
+[Unit]
+Description=Publish pezkuwichain/phishing master to phishing.pezkuwichain.io
+Documentation=https://github.com/pezkuwichain/phishing/tree/master/pezkuwi
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/phishing-publish
+ProtectSystem=strict
+ReadWritePaths=/var/lib/phishing-publish /var/www/phishing /run/lock
+PrivateTmp=yes
+ProtectHome=yes
+NoNewPrivileges=yes

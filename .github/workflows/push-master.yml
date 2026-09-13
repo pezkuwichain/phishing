@@ -4,45 +4,27 @@ on:
     branches:
       - master
 
+permissions: {}
+
 jobs:
   master:
     if: "! startsWith(github.event.head_commit.message, '[CI Skip]')"
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
     env:
       CI_LOG: 123
       YARN_ENABLE_SCRIPTS: false
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         fetch-depth: 0
-    - uses: actions/setup-node@v4
+        persist-credentials: false
+    - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
         node-version: 'lts/*'
     - name: Install and Build
       run: |
         yarn install
         yarn build
-
-  # publish to ipfs when a release is detected
-  ipfs:
-    if: "startsWith(github.event.head_commit.message, '[CI Skip] release/stable')"
-    strategy:
-      matrix:
-        step: ['build:release:ipfs']
-    name: ${{ matrix.step }}
-    runs-on: ubuntu-latest
-    env:
-      YARN_ENABLE_SCRIPTS: false
-      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-      PINATA_API_KEY: ${{ secrets.PINATA_API_KEY }}
-      PINATA_SECRET_KEY: ${{ secrets.PINATA_SECRET_KEY }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 'lts/*'
-    - name: ${{ matrix.step }}
-      run: |
-        yarn install --immutable
-        ./scripts/ipfsPrep.sh
-        yarn ${{ matrix.step }}

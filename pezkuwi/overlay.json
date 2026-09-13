@@ -1,0 +1,38 @@
+{
+	"protect": [
+		"dks.news",
+		"pex.mom",
+		"pex.network",
+		"pezkiwi.app",
+		"pezkuwi.com",
+		"pezkuwichain.io"
+	],
+	"deny": [
+		{
+			"date": "2026-09-13",
+			"reason": "Imitates the PezkuwiChain name and is not ours; blocked before anyone can use it (Serok, 2026-09-13).",
+			"url": "pezkuwichain.com"
+		},
+		{
+			"date": "2026-09-13",
+			"reason": "Imitates the PezkuwiChain name and is not ours; blocked before anyone can use it (Serok, 2026-09-13).",
+			"url": "pezkuwichain.online"
+		},
+		{
+			"date": "2026-09-13",
+			"reason": "Imitates the PezkuwiChain name and is not ours; blocked before anyone can use it (Serok, 2026-09-13).",
+			"url": "pezkuwichain.org"
+		},
+		{
+			"date": "2026-09-13",
+			"reason": "Imitates the PezkuwiChain name and is not ours; blocked before anyone can use it (Serok, 2026-09-13).",
+			"url": "pezkuwichain.site"
+		},
+		{
+			"date": "2026-09-13",
+			"reason": "Imitates the PezkuwiChain name and is not ours; blocked before anyone can use it (Serok, 2026-09-13).",
+			"url": "pezkuwichainweb.org"
+		}
+	],
+	"undeny": []
+}
