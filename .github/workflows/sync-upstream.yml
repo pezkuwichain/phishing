@@ -22,12 +22,16 @@ jobs:
     name: sync
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # master is protected (pull request, "lists" required) and only a deploy key may bypass it.
+    # The key is a secret of the "sync" environment, which runs for master only.
+    environment:
+      name: sync
     permissions:
-      contents: write
+      contents: read
       issues: write
     steps:
       # No credentials in the checkout: the sync and the checks process upstream's data, and only
-      # the commit step, below, is handed the token it pushes with.
+      # the commit step, below, is handed the key it pushes with.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
@@ -54,7 +58,7 @@ jobs:
       - name: Commit to master
         if: steps.sync.outputs.rc == '0'
         env:
-          GH_TOKEN: ${{ github.token }}
+          DEPLOY_KEY: ${{ secrets.SYNC_DEPLOY_KEY }}
         run: |
           set -euo pipefail
           if [ -z "$(git status --porcelain -- all.json address.json known.json all meta pezkuwi/upstream.json)" ]; then
@@ -65,8 +69,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A -- all.json address.json known.json all meta pezkuwi/upstream.json
           git commit -q -m "chore(lists): sync with polkadot-js/phishing" -m "$(grep -E '^(SYNC |unblocked: )' sync.out)"
-          gh auth setup-git
-          git push origin HEAD:master
+          install -d -m 700 ~/.ssh
+          umask 077
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/sync_deploy
+          # GitHub's own host keys, committed in pezkuwi/github_host_keys: nothing learned at run time.
+          sed 's|^|github.com |' pezkuwi/github_host_keys > ~/.ssh/known_hosts
+          GIT_SSH_COMMAND="ssh -i $HOME/.ssh/sync_deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            git push git@github.com:pezkuwichain/phishing.git HEAD:master
+          rm -f ~/.ssh/sync_deploy
 
       - name: Ask a person
         if: steps.sync.outputs.rc != '0'
