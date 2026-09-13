@@ -73,7 +73,8 @@ jobs:
           umask 077
           printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/sync_deploy
           # GitHub's own host keys, committed in pezkuwi/github_host_keys: nothing learned at run time.
-          sed 's|^|github.com |' pezkuwi/github_host_keys > ~/.ssh/known_hosts
+          # The file already names the host on each line; adding it again made ssh reject every key.
+          cp pezkuwi/github_host_keys ~/.ssh/known_hosts
           GIT_SSH_COMMAND="ssh -i $HOME/.ssh/sync_deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
             git push git@github.com:pezkuwichain/phishing.git HEAD:master
           rm -f ~/.ssh/sync_deploy
