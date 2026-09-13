@@ -19,6 +19,17 @@ const dir = path.resolve(process.argv[2] ?? '.');
 const lists = readLists(dir);
 const found = problems(lists, readOverlay(dir));
 
+// A shard on disk is not a shard on master: .gitignore held "build/", so all/build/all.json was
+// written by every sort and committed by none, and the host publishes what git holds.
+const shardFiles = Object.keys(lists.shards).map((top) => path.join('all', top, 'all.json'));
+const ignored = spawnSync('git', ['check-ignore', '--', ...shardFiles], { cwd: dir, encoding: 'utf8' });
+
+if (ignored.status === 0) {
+  for (const file of ignored.stdout.trim().split('\n')) {
+    found.push(`${file} is ignored by git and would never be published`);
+  }
+}
+
 /**
  * Every file under a directory, relative path to contents.
  * @param {string} root

@@ -1,5 +1,8 @@
 binaryen*
 build/
+# The shard of the .build top-level domain is a list, not build output: ignored, it was never
+# committed and the package found no .build site in all/build/all.json.
+!/all/build/
 build-*/
 coverage/
 node_modules/
