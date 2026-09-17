@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "https://deno.land/x/pezkuwi/util/mod.ts": "npm:@pezkuwi/util@^14.0.5",
+    "https://deno.land/x/pezkuwi/util-crypto/mod.ts": "npm:@pezkuwi/util-crypto@^14.0.5",
+    "https://deno.land/x/pezkuwi/x-fetch/mod.ts": "npm:@pezkuwi/x-fetch@^14.0.5"
+  }
+}
