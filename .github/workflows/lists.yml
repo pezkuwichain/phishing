@@ -28,6 +28,12 @@ jobs:
         run: node --test scripts/lists.test.mjs
       - name: The committed lists
         run: node scripts/checkLists.mjs
+      # What the repository says about itself: the build toolchain reads
+      # repository.url and dies on a host it cannot parse, and a wrong homepage
+      # ships to everyone who installs the package. This lives here rather than
+      # in the build job because it must run even when the build cannot.
+      - name: The repository's own metadata
+        run: node scripts/checkRepoMeta.mjs
       # What phishing.pezkuwichain.io runs before it serves a new master: against a scratch
       # repository and web root, with these lists.
       - name: The host's publish checks
