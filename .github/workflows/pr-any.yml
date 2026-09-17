@@ -5,7 +5,10 @@ permissions: {}
 
 jobs:
   pr:
-    continue-on-error: true
+    # continue-on-error was inherited from upstream and meant these four steps
+    # could never turn a pull request red. Two of them were failing — build since
+    # 2026-09-13 and deno for far longer — and nobody saw it, because the job
+    # reported success either way. A check that cannot fail is not a check.
     strategy:
       matrix:
         step: ['lint', 'test', 'build', 'deno']

@@ -34,6 +34,11 @@ jobs:
       # in the build job because it must run even when the build cannot.
       - name: The repository's own metadata
         run: node scripts/checkRepoMeta.mjs
+      # Whether the Deno build can still reach its dependencies. Same reason as
+      # above: it must run even when the toolchain cannot be installed, and it
+      # is the check that would have caught the broken map years earlier.
+      - name: The Deno import map
+        run: node scripts/checkDenoMap.mjs
       # What phishing.pezkuwichain.io runs before it serves a new master: against a scratch
       # repository and web root, with these lists.
       - name: The host's publish checks

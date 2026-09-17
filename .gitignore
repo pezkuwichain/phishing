@@ -11,6 +11,7 @@ target/
 tmp/
 /mod.ts
 /import_map.json
+/deno.lock
 .DS_Store
 .env.local
 .env.development.local
