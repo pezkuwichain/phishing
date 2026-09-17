@@ -1,3 +1,6 @@
+// Copyright 2020-2026 @pezkuwi/phishing authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // What this repository says about itself must be true, and must be something the
 // build toolchain can read.
 //
@@ -27,8 +30,8 @@
 //
 //   node scripts/checkRepoMeta.mjs
 
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 
 const errors = [];
 
@@ -65,7 +68,7 @@ const hosts = new Set();
 
 for (const file of files) {
   const pkg = JSON.parse(readFileSync(file, 'utf8'));
-  const url = pkg.repository && pkg.repository.url;
+  const url = pkg.repository?.url;
 
   check(`${file}: has a repository url`, !!url, pkg.repository);
   check(`${file}: the build toolchain can read that url`, toolchainCanRead(url), url);
@@ -73,7 +76,7 @@ for (const file of files) {
     !!url && !!pkg.homepage && !!pkg.bugs &&
       new URL(pkg.homepage).host === new URL(url).host &&
       new URL(String(pkg.bugs)).host === new URL(url).host,
-    { url, homepage: pkg.homepage, bugs: pkg.bugs });
+    { bugs: pkg.bugs, homepage: pkg.homepage, url });
 
   if (url) {
     hosts.add(new URL(url).host);
@@ -94,7 +97,9 @@ try {
 
 if (origin) {
   check('the metadata names the remote the code is actually pushed to',
-    hosts.has(new URL(origin.replace(/^git@([^:]+):/, 'https://$1/')).host), { origin, hosts: [...hosts] });
+    hosts.has(new URL(origin.replace(/^git@([^:]+):/, 'https://$1/')).host),
+    { hosts: [...hosts], origin }
+  );
 } else {
   console.log('ok    (no origin remote here — nothing to compare against)');
 }
