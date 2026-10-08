@@ -21,9 +21,9 @@
   "version": "0.25.28",
   "main": "index.js",
   "dependencies": {
-    "@pezkuwi/util": "^14.0.5",
-    "@pezkuwi/util-crypto": "^14.0.5",
-    "@pezkuwi/x-fetch": "^14.0.5",
+    "@pezkuwi/util": "^14.0.26",
+    "@pezkuwi/util-crypto": "^14.0.26",
+    "@pezkuwi/x-fetch": "^14.0.26",
     "tldts": "^7.0.8",
     "tslib": "^2.8.1"
   },
