@@ -3153,12 +3153,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"braces@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "braces@npm:3.0.3"
+"braces@npm:@pezkuwi/braces@^3.0.4":
+  version: 3.0.4
+  resolution: "@pezkuwi/braces@npm:3.0.4"
   dependencies:
     fill-range: "npm:^7.1.1"
-  checksum: 10/fad11a0d4697a27162840b02b1fad249c1683cbc510cd5bf1a471f2f8085c046d41094308c577a50a03a579dd99d5a6b3724c4b5e8b14df2c4443844cfcda2c6
+  checksum: 10/2f40d440686f51e9d6537900d5a34907e4a40143be6ed74c1de0a700388217352f1ea73c19af6f7cc379c0e62f887c23679430494c1fc974ff865e584aa26eea
   languageName: node
   linkType: hard
 
