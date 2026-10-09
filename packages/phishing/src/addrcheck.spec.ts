@@ -22,7 +22,7 @@ async function loopSome (site: string, matcher: () => Promise<string[] | null>):
     try {
       const addresses = await matcher();
 
-      addresses && addresses.forEach((address): void => {
+      addresses?.forEach((address): void => {
         if (address && !found.includes(address)) {
           found.push(address);
         }
