@@ -87,7 +87,7 @@ check('the whole repository agrees on one host', hosts.size === 1, [...hosts]);
 
 // And that host is where the code actually is. Without this the metadata can be
 // internally consistent and still point somewhere the code has never been.
-let origin = '';
+let origin;
 
 try {
   origin = execFileSync('git', ['remote', 'get-url', 'origin'], { encoding: 'utf8' }).trim();

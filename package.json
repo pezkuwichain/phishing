@@ -41,7 +41,7 @@
     "dnslink-cloudflare": "^3.0.0"
   },
   "devDependencies": {
-    "@pezkuwi/dev": "^0.85.2",
+    "@pezkuwi/dev": "^0.86.2",
     "@types/node": "^22.10.5"
   },
   "resolutions": {
