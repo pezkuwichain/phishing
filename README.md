@@ -37,7 +37,7 @@ following that
 
 - [Pezkuwi Extension](https://github.com/pezkuwichain/pezkuwi-extension)
 - [Pezkuwi SDK UI](https://github.com/pezkuwichain/pwap)
-- [Pezkuwi Apps](https://pezkuwichain.app)
+- [Pezkuwi Portal](https://js.pezkuwichain.io)
 
 
 ### Integration
