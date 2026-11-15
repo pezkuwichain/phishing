@@ -3785,10 +3785,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.2.2":
-  version: 4.3.1
-  resolution: "deepmerge@npm:4.3.1"
-  checksum: 10/058d9e1b0ff1a154468bf3837aea436abcfea1ba1d165ddaaf48ca93765fdd01a30d33c36173da8fbbed951dd0a267602bc782fe288b0fc4b7e1e7091afc4529
+"deepmerge@npm:@pezkuwi/deepmerge@^4.3.2":
+  version: 4.3.2
+  resolution: "@pezkuwi/deepmerge@npm:4.3.2"
+  checksum: 10/3287d959f4035d134599ba3d057ce7caedc719d53bce73468d9ce733d96f788e672fd5c574a176ad987282eb4d8eb9b79441e1e386eebde6b43bfdb37ebc5250
   languageName: node
   linkType: hard
 
